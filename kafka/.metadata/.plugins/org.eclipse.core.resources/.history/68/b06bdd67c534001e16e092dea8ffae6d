@@ -1,0 +1,23 @@
+package com.epam.kafkaconsumer;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.epam.dto.NotificationDto;
+import com.epam.service.NotificationService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+public class NotificationConsumer {
+
+	@Autowired
+	NotificationService notificationService;
+	
+	public void sendNotification(NotificationDto notificationDto) {
+		log.info("Consumed notification dto: ", notificationDto);
+		notificationService.addNewNotificationLog(notificationDto);
+		
+	}
+}

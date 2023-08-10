@@ -1,0 +1,5 @@
+package com.epam.kafkaproducer;
+
+public class NotificationProducer {
+
+}
